@@ -6,4 +6,8 @@ from  [pokeapi](https://pokeapi.co/).
 ### Try
 ```
 git clone git@github.com:Vinz93/pokedex.git
+
+npm install
+
+npm start
 ```
