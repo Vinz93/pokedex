@@ -12,9 +12,11 @@ class Pokemon extends React.Component {
           <img src={this.props.main_image} />
         </div>
         <div className="col-sm-8 pokemon-info">
-          <Stats stats={this.props.stats}
+          <Stats
+            stats={this.props.stats}
             height={this.props.height}
-            weight={this.props.weight} />
+            weight={this.props.weight}
+            />
           <div className="gameboy-img-wrapper">
             <img src={this.props.front_image} />
             <img src={this.props.back_image} />
@@ -29,7 +31,12 @@ const Stats = (props) =>{
   return(
     <div className="poke-stats row">
       {props.stats.map((stat) =>{
-        return <div className="col-sm-6" key={stat.stat.name}>  <p className="stat-title">{stat.stat.name} </p>{stat.base_stat}</div>
+        return (
+          <div className="col-sm-6" key={stat.stat.name}>
+            <p className="stat-title">{stat.stat.name} </p>
+            {stat.base_stat}
+          </div>
+        );
       })}
       <div className="col-sm-6"> <p className="stat-title">Height </p>{props.height}</div>
       <div className="col-sm-6"> <p className="stat-title">Weight </p>{props.weight}</div>

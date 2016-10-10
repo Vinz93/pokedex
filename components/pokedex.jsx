@@ -1,6 +1,6 @@
 import React from 'react';
 import pokeNumber from '../helper'
-import Pokemon from './pokemon'
+import Pokemon from './Pokemon'
 
 const POKE_API = "http://pokeapi.co";
 const POKE_ASSETS = "http://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
@@ -19,7 +19,8 @@ class Pokedex extends React.Component {
   }
 
   findPokemon(id) {
-    fetch( `${POKE_API}/api/v2/pokemon/${id}/`)
+    this.setState({pokemon: null});
+    fetch(`${POKE_API}/api/v2/pokemon/${id}/`)
       .then((response) => response.json())
       .then((pokemon) => {
          this.setState({
@@ -43,41 +44,46 @@ class Pokedex extends React.Component {
   }
 
   render() {
-    if(this.state.pokemon !== null){
+    const RenderItem = this.state.pokemon !== null ?
+    <PokemonItem {...this.state.pokemon} image={this.state.image}/> : <Loader />
       return(
-        <div className="pokedex-container">
-          <header>
-            <p className="brand">Pokedex</p>
-          </header>
-          <div className="pokedex-case">
-            <div className="case-screen">
-              <Pokemon
-                name={ this.state.pokemon.name}
-                id= {this.state.pokemon.id}
-                stats= {this.state.pokemon.stats}
-                height={this.state.pokemon.height}
-                weight={this.state.pokemon.weight}
-                main_image={this.state.image}
-                back_image= { this.state.pokemon.sprites.back_default}
-                front_image = {this.state.pokemon.sprites.front_default} />
-            </div>
-            <div className="case-controls">
-              <form onSubmit={this.handleSubmit}>
-                <input type="number" onChange={this.handleChange}/>
-                <button>Find</button>
-              </form>
-            </div>
-            </div>
+        <div className="pokedex-case">
+          <div className="case-screen">
+            {RenderItem}
+          </div>
+          <div className="case-controls">
+            <form onSubmit={this.handleSubmit}>
+              <input type="number" onChange={this.handleChange}/>
+              <button>Find</button>
+            </form>
+          </div>
         </div>
       );
-    } else{
-      return(
-        <div className="pokeball-wrapper">
-          <div className="pokeball"/>
-        </div>
-      );
-    }
+
   }
+}
+
+const PokemonItem = (props) =>{
+  return(
+    <Pokemon
+      name={ props.name}
+      id= {props.id}
+      stats= {props.stats}
+      height={props.height}
+      weight={props.weight}
+      main_image={props.image}
+      back_image= { props.sprites.back_default}
+      front_image = {props.sprites.front_default}
+    />
+  );
+}
+
+const Loader = () =>{
+  return(
+    <div className="pokeball-wrapper">
+      <div className="pokeball"/>
+    </div>
+  );
 }
 
 

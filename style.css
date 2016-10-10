@@ -46,6 +46,8 @@ header > .brand {
     border-color: #b0b0b0;
     border-radius: 4px;
     background-color: #fff;
+    min-height: 480px;
+    position: relative;
 }
 
 .pokemon-container .name{
@@ -91,8 +93,8 @@ header > .brand {
 
 .case-controls > form > input{
   border: none;
-  width: 60px;
-  height: 40px;
+  width: 110px;
+  height: 50px;
   border-radius: 4px;
   background-color: #51ae5f;
   color: #000;
@@ -120,8 +122,8 @@ header > .brand {
 
 .pokeball-wrapper{
   position: absolute;
-  top: 50%;
-  right: 50%;
+  top: 41%;
+  right: 48%;
   -ms-transform: transform: translate(-50%, -50%);
   -webkit-transform: transform: translate(-50%, -50%);
   transform: transform: translate(-50%, -50%);
