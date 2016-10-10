@@ -9,7 +9,7 @@ class Pokemon extends React.Component {
             <span className="__capitalize">{this.props.name} </span>
             <span className="poke_id">#{this.props.id}</span>
           </p>
-          <img src={this.props.main_image} />
+          <img src={this.props.image} />
         </div>
         <div className="col-sm-8 pokemon-info">
           <Stats
@@ -18,8 +18,8 @@ class Pokemon extends React.Component {
             weight={this.props.weight}
             />
           <div className="gameboy-img-wrapper">
-            <img src={this.props.front_image} />
-            <img src={this.props.back_image} />
+            <img src={this.props.sprites.front_default} />
+            <img src={this.props.sprites.back_default} />
           </div>
         </div>
       </div>

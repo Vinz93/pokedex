@@ -45,7 +45,7 @@ class Pokedex extends React.Component {
 
   render() {
     const RenderItem = this.state.pokemon !== null ?
-    <PokemonItem {...this.state.pokemon} image={this.state.image}/> : <Loader />
+    <Pokemon {...this.state.pokemon} image={this.state.image}/> : <Loader />
       return(
         <div className="pokedex-case">
           <div className="case-screen">
@@ -61,21 +61,6 @@ class Pokedex extends React.Component {
       );
 
   }
-}
-
-const PokemonItem = (props) =>{
-  return(
-    <Pokemon
-      name={ props.name}
-      id= {props.id}
-      stats= {props.stats}
-      height={props.height}
-      weight={props.weight}
-      main_image={props.image}
-      back_image= { props.sprites.back_default}
-      front_image = {props.sprites.front_default}
-    />
-  );
 }
 
 const Loader = () =>{
