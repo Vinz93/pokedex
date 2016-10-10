@@ -72,7 +72,9 @@ class Pokedex extends React.Component {
       );
     } else{
       return(
-        <p>Loading..</p>
+        <div className="pokeball-wrapper">
+          <div className="pokeball"/>
+        </div>
       );
     }
   }
