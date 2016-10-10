@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --colors"
   },
-  "author": "",
+  "author": "Vincenzo Bianco",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.17.0",
