@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom'
 import pokeNumber from '../helper'
 import Pokemon from './Pokemon'
 
@@ -28,6 +29,9 @@ class Pokedex extends React.Component {
            image:`${POKE_ASSETS}${pokeNumber(pokemon.id)}.png`
          })
       })
+      .catch((err) => {
+        ReactDOM.unmountComponentAtNode(<Loader />);
+      });
   }
 
   handleChange(e){
@@ -53,7 +57,7 @@ class Pokedex extends React.Component {
           </div>
           <div className="case-controls">
             <form onSubmit={this.handleSubmit}>
-              <input type="number" onChange={this.handleChange}/>
+              <input type="number" onChange={this.handleChange} />
               <button>Find</button>
             </form>
           </div>
