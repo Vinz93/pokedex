@@ -1,0 +1,117 @@
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+html, body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato',sans-serif;
+}
+
+header{
+  padding: 6px;
+  background-color: #EF5350;
+  color: #fff;
+}
+
+header > .brand {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 900;
+}
+
+/* =================================
+      pokedex
+ =================================== */
+.pokedex-case{
+    margin: 4% 6%;
+    padding: 25px 20px;
+    background-color: #EF5350;
+    border-radius: 5px;
+    position: relative;
+}
+
+.case-screen{
+    padding: 5px;
+    border-top: 10px solid;
+    border-right: 10px solid;
+    border-left: 10px solid;
+    border-bottom: 25px solid;
+    border-color: #b0b0b0;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.pokemon-container .name{
+  font-size: 21px;
+  text-align: center;
+}
+
+.pokemon-container .name .__capitalize{
+  text-transform: capitalize;
+}
+
+.pokemon-container .name .poke_id{
+  color: #616161;
+}
+
+.pokemon-preview, .gameboy-img-wrapper{
+  text-align: center;
+}
+
+.pokemon-preview img{
+  display: inline-block;
+}
+
+.gameboy-img-wrapper > img{
+  display: inline-block;
+}
+.poke-stats{
+  background-color: #30a7d7;
+  padding: 20px;
+  border-radius: 13px;
+  width: 70%;
+  margin: 10px auto;
+}
+
+.poke-stats .stat-title{
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.case-controls > form{
+  padding: 30px;
+}
+
+.case-controls > form > input{
+  border: none;
+  width: 60px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #51ae5f;
+  color: #000;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.case-controls > form > button{
+  float: right;
+  margin: 10px 40px 0px 0px;
+  border: none;
+  background-color: #00312b;
+  border-radius: 4px;
+  padding: 8px 18px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+
+}
+
+.loader{
+  height: 10px;
+  width: 10px;
+  background-color: pink;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
